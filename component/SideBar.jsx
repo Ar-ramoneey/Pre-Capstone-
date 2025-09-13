@@ -2,17 +2,17 @@ import { useSideBar } from "../ContextAPI/StateContext";
 import Branch from "./Branch";
 
 export default function SideBar() {
-    const { state, setState, active, setactive} = useSideBar()
- 
+  const { state, setState, active, setactive } = useSideBar();
+
   return (
     <main>
       <nav className="flex">
-        <div className="min-h-screen w-55 bg-[#08183A] p-5">
+        <div className="min-h-screen w-53 bg-[#08183A] p-5">
           <div className=" flex items-center mb-10">
             <p className="bg-yellow-500 p-2 rounded-lg font-semibold ">
               Jhon Doreamon
             </p>
-            <button className="text-white text-2xl ml-auto"> ☰</button>
+            <button className="text-white text-2xl ml-auto"> <i class="fa-solid fa-bars"></i></button>
           </div>
           <div className="flex flex-col items-start">
             <button
@@ -167,7 +167,6 @@ export default function SideBar() {
             )}
           </div>
         </div>
-        
       </nav>
     </main>
   );
