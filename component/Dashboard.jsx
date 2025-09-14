@@ -6,12 +6,19 @@ import { useSideBar } from "../ContextAPI/StateContext";
 import SessionsTable from "./Session";
 import Cards from "./Cards";
 import StudentTable from "./MySchool";
+import Profile from "./profile";
+import Menu from "./Menu";
 
 export default function Dashboard() {
-  const { state, setState, active, setactive } = useSideBar();
+  const { state, active, menu } = useSideBar();
   return (
     <div>
-      <div className="sticky top-0">
+      {menu && (
+        <div className="absolute  bg-white flex justify-center items-center z-50  ">
+          <Menu/>
+        </div>
+      )}
+      <div className="sticky top-0 w- w-196 md:w-screen">
         <NavBar />
       </div>
       <div className="flex">
@@ -38,6 +45,11 @@ export default function Dashboard() {
           {state === "school" && (
             <div className="overflow-y-auto">
               <StudentTable />
+            </div>
+          )}
+          {state === "admin" && (
+            <div className="overflow-y-auto">
+              <Profile />
             </div>
           )}
         </div>

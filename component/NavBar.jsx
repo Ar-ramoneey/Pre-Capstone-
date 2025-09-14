@@ -1,8 +1,10 @@
 import React from 'react'
 import Profile from '../src/assets/selfie.jpeg'
 import Logo from "../src/assets/Logo.png";
+import { useSideBar } from '../ContextAPI/StateContext';
 
 export default function NavBar() {
+  const {image} = useSideBar()
   return (
     <div className="bg-white  flex items-center justify-between shadow-md py-2 px-5">
       <div className="flex items-center">
@@ -27,7 +29,11 @@ export default function NavBar() {
             </button>
           </div>
           <div className="flex items-center">
-            <img src={Profile} alt="Profile Picture" className="h-10 w-10 rounded-full" />
+            <img
+          src={image || "https://img.icons8.com/?size=100&id=j1UxMbqzPi7n&format=png&color=000000"}
+          alt="Profile"
+          className="w-11 h-11 rounded-full object-cover border"
+        />
             <span className='text-[#08183A] ml-2 font-semibold'>John Doremon</span>
             <span className='ml-2 '><i class="fa-solid fa-chevron-down"></i></span>
             <button className='ml-7'><i class="fa-solid fa-bell"></i></button>

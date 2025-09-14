@@ -4,7 +4,7 @@ export  const MySchoolData = [
       name: "John Tripathi",
       class: "XII",
       roll: 27,
-      avatar: "https://i.pravatar.cc/40?img=",
+      avatar: "https://i.pravatar.cc/40?img=12",
       reg: "050003921",
     },
     {
@@ -12,7 +12,7 @@ export  const MySchoolData = [
       name: "John Tripathi",
       class: "XII",
       roll: 27,
-      avatar: "https://i.pravatar.cc/40?img=0",
+      avatar: "https://i.pravatar.cc/40?img=5",
       reg: "050003921",
     },
     {

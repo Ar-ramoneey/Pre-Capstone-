@@ -1,8 +1,7 @@
 import { useSideBar } from "../ContextAPI/StateContext";
-import Branch from "./Branch";
 
 export default function SideBar() {
-  const { state, setState, active, setactive } = useSideBar();
+  const { state, setState, active, setactive, setMenu } = useSideBar();
 
   return (
     <main>
@@ -12,7 +11,7 @@ export default function SideBar() {
             <p className="bg-yellow-500 p-2 rounded-lg font-semibold ">
               Jhon Doreamon
             </p>
-            <button className="text-white text-2xl ml-auto"> <i class="fa-solid fa-bars"></i></button>
+            <button onClick={() => setMenu(true)} className="text-white text-2xl ml-auto"> <i class="fa-solid fa-bars"></i></button>
           </div>
           <div className="flex flex-col items-start">
             <button
@@ -25,7 +24,7 @@ export default function SideBar() {
                   : "text-white"
               } font-semibold mb-3`}
             >
-              Go To Super Admin
+             <i class="fa-solid fa-eye"></i> Go To Super Admin
             </button>
             <button
               onClick={() => {
@@ -37,19 +36,19 @@ export default function SideBar() {
                   : "text-white"
               } font-semibold mb-3`}
             >
-              My School
+             <i class="fas fa-coins mr-3"></i> My School
             </button>
             <button
               onClick={() => {
                 setState("management");
               }}
-              className={`text-md  ${
+              className={`text-sm  ${
                 state === "management"
                   ? "text-black bg-yellow-500 rounded-lg w-full py-1"
                   : "text-white"
               } font-semibold mb-3`}
             >
-              School management
+             <i class="fa-solid fa-eye"></i> School management
             </button>
             {state === "management" && (
               <div className="bg-yellow-400 flex flex-col w-46 items-start py-4 px-8 rounded-[20px]">
@@ -57,25 +56,25 @@ export default function SideBar() {
                   onClick={() => {
                     setactive("dashboard");
                   }}
-                  className={`text-md font-semibold ${
+                  className={`text-sm font-semibold w-31 ${
                     active === "dashboard"
                       ? "text-white bg-[#08183A] py-1 px-4 rounded-full"
                       : "text-[#08183A]"
                   }`}
                 >
-                  Dashboard
+                 <i class="fa-solid fa-file"></i> Dashboard
                 </button>
                 <button
                   onClick={() => {
                     setactive("branch");
                   }}
-                  className={`text-md font-semibold ${
+                  className={`text-md font-semibold w-36 ${
                     active === "branch"
                       ? "text-white bg-[#08183A] py-1 px-4 rounded-full"
                       : "text-[#08183A]"
                   }`}
                 >
-                  Add Branch
+                  <i class="fa-solid fa-file"></i> Add Branch
                 </button>
                 <button
                   onClick={() => {
@@ -87,7 +86,7 @@ export default function SideBar() {
                       : "text-[#08183A]"
                   }`}
                 >
-                  Class
+                 <i class="fa-solid fa-file"></i> Class
                 </button>
                 <button
                   onClick={() => {
@@ -99,7 +98,7 @@ export default function SideBar() {
                       : "text-[#08183A]"
                   }`}
                 >
-                  Sessions
+                 <i class="fa-solid fa-file"></i> Sessions
                 </button>
               </div>
             )}
@@ -121,46 +120,46 @@ export default function SideBar() {
                   onClick={() => {
                     setactive("dashboards");
                   }}
-                  className={`text-md font-semibold ${
+                  className={`text-md font-semibold w-34 ${
                     active === "dashboards"
                       ? "text-white bg-[#08183A] py-1 px-4 rounded-full"
                       : "text-[#08183A]"
                   }`}
                 >
-                  Dashboard
+                 <i class="fa-solid fa-file"></i> Dashboard
                 </button>
                 <button className="text-md font-semibold mt-3 text-[#08183A]">
-                  Class
+                 <i class="fa-solid fa-file"></i>  Class
                 </button>
                 <button className="text-md font-semibold mt-3 text-[#08183A]">
-                  Sections
+                 <i class="fa-solid fa-file"></i> Sections
                 </button>
                 <button className="text-md font-semibold mt-3 text-[#08183A]">
-                  Subjects
+                 <i class="fa-solid fa-file"></i> Subjects
                 </button>
                 <button className="text-md font-semibold mt-3 text-[#08183A]">
-                  Time Table
+                 <i class="fa-solid fa-file"></i> Time Table
                 </button>
                 <button className="text-md font-semibold mt-3 text-[#08183A]">
-                  Attendance
+                 <i class="fa-solid fa-file"></i> Attendance
+                </button>
+                <button className="text-md font-semibold w-32 mt-3 text-[#08183A]">
+                 <i class="fa-solid fa-file"></i> Student Leave
+                </button>
+                <button className="text-md font-semibold w-35 mt-3 text-[#08183A]">
+                 <i class="fa-solid fa-file"></i> Study Materials
                 </button>
                 <button className="text-md font-semibold mt-3 text-[#08183A]">
-                  Student Leave
+                 <i class="fa-solid fa-file"></i> Home Work
                 </button>
                 <button className="text-md font-semibold mt-3 text-[#08183A]">
-                  Study Materials
+                 <i class="fa-solid fa-file"></i> Notice Board
                 </button>
                 <button className="text-md font-semibold mt-3 text-[#08183A]">
-                  Home Work
+                 <i class="fa-solid fa-file"></i> Events
                 </button>
                 <button className="text-md font-semibold mt-3 text-[#08183A]">
-                  Notice Board
-                </button>
-                <button className="text-md font-semibold mt-3 text-[#08183A]">
-                  Events
-                </button>
-                <button className="text-md font-semibold mt-3 text-[#08183A]">
-                  Live Classes <br />
+                  <i class="fa-solid fa-file"></i> Live Classes <br />
                   <span className="underline">( Go Pro)</span>
                 </button>
               </div>
